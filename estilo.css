@@ -1,0 +1,274 @@
+* {margin: 0;
+    padding: 0;}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #fff url(imagens/fundo.png) repeat-x;
+    }
+
+#container {
+    width: 850px;
+    margin: 0 auto;
+   }
+
+#topo {
+    height:150px;
+    background: url(imagens/detalhe-topo.png) no-repeat right top;
+    padding-top: 25px;
+    }
+
+.logo {
+    width:152px;
+    height: 66px;
+    background: url(imagens/logo.png) no-repeat center;
+    text-indent: -3000px;
+} 
+/* width e height da imagem notícias da cidade tem exatamente essa altura e largura 
+apesar do LOGO vir escrito NOTÍCIAS DA CIDADE, DEIXEI H1 notícias da cidade escrito por questões de acessibilidade.
+Posso colocar um display-none para que não apareça mas os robos de busca não gostam. Para isso, colocamos um text-indent com espaçamento de -3000px para que ele nem apareça no site, mas está lá e não altera nada nos mecanismos de busca.*/
+
+
+/* barra de navegação */
+ul {
+    margin: 0px; 
+    padding: 0px;
+    list-style: none;}
+
+#topo ul{
+    background: #b10333;
+    margin-top:30px;
+    float:left;
+    
+    }
+
+/* em aulas anteriores ele ensinou que para coloccar um menu horizontal teria que escrever li {display:inline}. Na aula ele simplesmente colocou um FLOAT LEFT para a UL e a LI para flutuar os conteúdos e também o background 
+ul li{display: inline;}*/
+
+#topo ul li{
+    float: left;
+        }
+
+#topo ul a {font-size:0.9 em;
+    display: block;
+    padding: 0.5em 1.5em;
+    line-height: 2.1em;
+    text-decoration: none;
+    color:#fff;
+    background: url(imagens/divisor.png) no-repeat left center;}
+
+#topo ul .primeiro a{background: none;}
+
+#topo ul a:hover{
+    color:#69001d;
+}
+
+body.home #navegacao a#home,
+body.brasil #navegacao a#brasil,
+body.internacional #navegacao a#internacional,
+body.economia #navegacao a#economia,
+body.saude #navegacao a#saúde,
+body.ciencia #navegacao a#ciencia,
+body.fotos #navegacao a#fotos {
+    color:#fff;
+    background: #de003e;
+    cursor:text;
+}
+
+/* configura layout de 3 colunas */
+#conteudo {
+    background: #c5c4c4;
+    margin-top: 60px;
+}
+
+/* TUDO DE CONTEUDO ESTA DENTRO DO ID CONTAINER, QUE TEM  850 PX*/
+#tres-colunas #primario {
+    width: 300px;
+    float: left;
+    margin: 0 0 20px 235px;
+    box-sizing: border-box; /*sempre que queremos manter o tamanho da caixa, independentemente do padding e do margin, escrevemos isso: box-sizing: border box*/
+
+    }
+
+#duas-colunas #primario {
+    width: 615px; /*300 do primario+300 do lateral+15 de margem*/
+    float: left;   
+    margin: 0 0 20px 235px;
+   
+    box-sizing: border-box;
+}
+
+/* professor em DUAS-COLUNAS PRIMÁRIO não coloca float nem margin nem nada. Qd eu só coloco width 615, some o lateral so site. não sei por que */
+
+#uma-coluna #primario{
+    width: 850px;
+    margin: 0 0 20px 0;
+    /* float: left; vai remover esse float left em uma-coluna*/
+   
+    box-sizing: border-box;
+}
+
+
+#tres-colunas #secundario {
+    width: 300px;
+    
+    float: left;
+    margin: 0 0 20px 15px;
+    box-sizing: border-box;
+}
+
+#lateral{
+    width: 220px;
+    float: left;
+    margin: 0 0 20px -850px;
+    box-sizing: border-box;
+}
+
+/* formatar conteudo de lateral */
+
+
+
+#lateral .caixa-conteudo a{
+    font-size: 0.9em;
+    padding: 3px;
+    display: block;
+    line-height: 30px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+#lateral .caixa-conteudo a:hover {
+    color: #a1a1a1;
+    background: #f9f9f9 url(imagens/marcador.png) no-repeat left center;
+    padding-left: 20px;
+}
+
+label {
+    display: block;
+    cursor: pointer;
+    }
+
+input {
+    font-size: 0.9em;
+    background-color: #fff;
+    padding: 5px;
+    width: 125px;
+    }
+
+input.submit {
+    width: 80px;
+    color: #fff;
+    background-color: #b10333;
+    border: 2px solid #870529;
+    }
+
+/* Tem que usar nessa ordem primário, secundário e lateral por questões de acessibilidade. mas quando flutuamos tudo à esquerda, lateral fica lá por ultimo (à direita). Para trazer lateral para a esquerda, trabalho com as margens. para levar primário e secundário para a esquerda, dando o espaço da LATERAL mais uns 15 px de reserva, coloco a largura da LATERAL+15PX (235PX) */
+
+.caixa {
+    background: #f3f3f3 url(imagens/fundo-caixa.png);
+    margin: 10px 0;
+    padding: 5px;
+    
+}
+
+h2{
+    font-size: 1em;
+    background: #294c71;
+    color: #fff;
+    padding: 5px;
+    
+}
+
+.caixa-conteudo {
+    background: #fff;
+    padding: 5px;
+    margin-top: 5px;
+ }
+/* barra de navegação */
+
+a {text-decoration: none;}
+
+a:link, a:visited {
+    color: #b10333;
+    padding: 2px;
+}
+
+a:hover {
+    color:#e50040;
+}
+/* formatando cabeçalhos */
+
+h3 {text-transform: uppercase;
+    display: inline;
+    font-size: 0,8em;
+    padding: 3px;
+}
+
+p {text-align: justify;}
+
+
+.destaque h3 {
+    background: #b10333;
+    color: #fff;
+}
+
+.entrevista h3 {
+    background: #de003e;
+
+}
+
+/* formatando lista de notícias - ul ja está formatada lá em cima. vamos formatar só lis*/
+
+.lista-noticias li{
+    padding: 2px;
+    border-bottom: 1px solid #ccc;
+    height: 62px;
+}
+
+.lista-noticias li a img {
+    float:left;
+    margin: 5px;
+}
+
+.lista-noticias li a{
+    text-decoration: none;
+    color: black;
+   
+}
+
+.lista-noticias li:hover {
+    background: rgb(230, 228, 228);
+    cursor: pointer;
+}
+
+.lista-noticias li a h3{
+    font-size: 0.8em;
+    padding:0;
+    color: #3e7ab9;
+}
+
+.lista-noticias li a p{
+    font-size: 0.7em;
+}
+
+
+/* formatando imagens */
+
+img.imagem-principal {
+    width: 98%;
+    border: 3px solid #dfdfdf;
+}
+
+
+
+/* rodapé */
+#container-rodape{
+    background: #294c71;
+    padding: 20px;
+}
+
+#rodape{
+    width: 850px;
+    margin:0 auto;
+    color: #fff;
+}
